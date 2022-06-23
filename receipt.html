@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/index.css" />
+    <link rel="stylesheet" href="styles/receipt.css" />
+</head>
+
+<body>
+    <main>
+        <div class="row">
+            <div class="title">
+                <h1>Receipt</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="pruchased items">
+                <ul id="products">
+                    <li>Items:<span class="price">price</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="subtotal items">
+                <ul>
+                    <li>Subtotal:</li>
+                    <li class="item">Sub total<span class="price" id="info-subtotal"></span></li>
+                    <li class="item">HST(%13)<span class="price" id="info-hst"></span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="total items">
+                <ul>
+                    <li>Total:</li>
+                    <li class="item">Total<span class="price" id="info-total"></span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="transfer">
+                <h1>Transfer info</h1>
+                <p>Card Number: <span id="info-cardnumber">xxxx-xxxx-xxxx-xxxx</span></p>
+                <p>Expiry: <span id="info-expiry">NOV 2022</span></p>
+                <p>CVV: <span id="info-cvv">XXX</span></p>
+                <p>Name: <span id="info-name">XXX</span></p>
+                <p>Phone: <span id="info-phone">XXX</span></p>
+                <p>Address: <span id="info-address">XXX</span></p>
+                <p>City: <span id="info-city">XXX</span></p>
+                <p>Province: <span id="info-province">XXX</span></p>
+                <p>Postcode: <span id="info-postcode">XXX</span></p>
+
+            </div>
+        </div>
+    </main>
+    <script src="scripts/receipt.js"></script>
+</body>
+
+</html>

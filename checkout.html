@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/index.css" />
+</head>
+
+<body>
+    <main>
+        <form class="checkout-form" action="receipt.html" id="checkout-form">
+
+            <div class="row">
+                <div class="col-6 box left">
+                    <div class="row">
+                        <div class="col-6"><label>Name</label></div>
+                        <div class="col-6"><input class="field" type="text" name="name" placeholder="Name" required value="klajdflja" /></div>
+                    </div><!-- row -->
+                    <div class="row">
+                        <div class="col-6"><label>Mobile</label></div>
+                        <div class="col-6"><input class="field" type="text" name="mobile" placeholder="Phone" value="123 123 1234" /></div>
+                    </div><!-- row -->
+                    <div class="row">
+                        <div class="col-6"><label>Postcode</label></div>
+                        <div class="col-6"><input class="field" type="text" name="postcode" placeholder="N2K 0H2" value="N2K 0H2" /></div>
+                    </div><!-- row -->
+                    <div class="row">
+                        <div class="col-6"><label>Address</label></div>
+                        <div class="col-6"><input class="field" type="text" name="address" placeholder="123 Northfield Drive" value="123 Northfield Drive" /></div>
+                    </div><!-- row -->
+                    <div class="row">
+                        <div class="col-6"><label>City</label></div>
+                        <div class="col-6"><input class="field" type="text" name="city" placeholder="Waterloo" value="Waterloo" /></div>
+                    </div><!-- row -->
+                    <div class="row">
+                        <div class="col-6"><label>Province</label></div>
+                        <div class="col-6"><input class="field" type="text" name="province" placeholder="Ontario" value="Ontario" /></div>
+                    </div><!-- row -->
+                </div>
+                <div class="col-6 box right">
+                    <div class="row">
+                        <div class="col-6"><label>Card Number</label></div>
+                        <div class="col-6"><input class="field" type="text" name="cardnumber" placeholder="xxxx-xxxx-xxxx-xxxx" required value="1234 1234 1234 1234" /></div>
+                    </div><!-- row -->
+                    <div class="row" id="feedback-cardnumber"></div>
+                    <div class="row">
+                        <div class="col-6"><label>Expiry</label></div>
+                        <div class="col-6"><input class="field" type="text" name="expiry" placeholder="MMM/yyyy e.g: NOV/2021" required value="NOV/2021" /></div>
+                    </div><!-- row -->
+                    <div class="row">
+                        <div class="col-6"><label>Email</label></div>
+                        <div class="col-6"><input class="field" type="email" name="email" placeholder="name@example.com" value="akldjf@alkdf.com" /></div>
+                    </div><!-- row -->
+                    <div class="row">
+                        <div class="col-6"><label>Password</label></div>
+                        <div class="col-6"><input class="field" type="password" name="password" placeholder="" value="alkdjflaf" /></div>
+                    </div><!-- row -->
+                    <div class="row">
+                        <div class="col-6"><label>Confirm Password</label></div>
+                        <div class="col-6"><input class="field" type="password" name="confirmpassword" placeholder="" value="alkdjflaf" /></div>
+                    </div><!-- row -->
+                </div>
+            </div>
+            <div class="row">
+                <button class="submit" type="submit">Pay</button>
+            </div><!-- row -->
+        </form><!-- form -->
+
+    </main>
+    <script src="scripts/checkout.js"></script>
+</body>
+
+</html>
