@@ -59,8 +59,6 @@ function initReceipt(){
         }
     });
 
-    console.log(data);
-
     displayPrice(subtotal);
 
     return data;
