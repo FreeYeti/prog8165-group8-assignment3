@@ -13,6 +13,7 @@ function getProducts(){
 // give user a feedback in form
 function feedback(name, msg){
     document.getElementById(`feedback-${name}`).innerHTML = msg;
+    return true;
 }
 
 //// validation functions
@@ -60,8 +61,18 @@ function validationPassword(password, confirm){
     return true;
 }
 
+// set message to none
+function resetMessage(){
+    const doms = document.getElementsByClassName("feedback");
+    for (let index = 0; index < doms.length; index++) {
+        const element = doms[index];
+        element.innerHTML = "";
+    }
+}
+
 // submit the form
 function submit(event){
+    resetMessage(); // empty the message box
 
     // the form data which need to submit to next page
     const formData = new FormData();
@@ -80,11 +91,15 @@ function submit(event){
     }
 
     // do validation here
-    if (!validateCardNumber(formData.get("cardnumber"))) return event.preventDefault();
-    if (!validatePhoneNumber(formData.get("mobile"))) return event.preventDefault();
-    if (!validatePostCode(formData.get("postcode"))) return event.preventDefault();
-    if (!validateExpiry(formData.get("expiry"))) return event.preventDefault();
-    if (!validationPassword(formData.get("password"), formData.get("confirmpassword"))) return event.preventDefault();
+    let v1 = validateCardNumber(formData.get("cardnumber"))
+    let v2 = validatePhoneNumber(formData.get("mobile"))
+    let v3 = validatePostCode(formData.get("postcode"))
+    let v4 = validateExpiry(formData.get("expiry"))
+    let v5 = validationPassword(formData.get("password"), formData.get("confirmpassword"))
+
+    let error = v1 || v2 || v3 || v4 || v5;
+
+    if (error) return event.preventDefault();
     
     // convert formdata to a querystring, so we can pass to next page
     const queryString = new URLSearchParams(formData).toString()

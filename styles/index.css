@@ -126,3 +126,7 @@ main {
     color: #FFF;
     font-style: italic;
 }
+
+.feedback {
+    color: rgb(113, 9, 9);
+}
