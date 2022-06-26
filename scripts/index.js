@@ -1,3 +1,9 @@
+/*
+Group 8 - Assignment 3
+Authors:
+ - Jianxuan Li
+ - Krupa Suhagiya
+*/
 document.getElementById("products-form").addEventListener("submit", function(event){
     let has = false
     for(let i = 1; i <= 4; i++){

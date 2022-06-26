@@ -1,3 +1,10 @@
+/*
+Group 8 - Assignment 3
+Authors:
+ - Jianxuan Li
+ - Krupa Suhagiya
+*/
+
 // create pruchased items
 function genItem(name, price){
     // the product item

@@ -1,3 +1,10 @@
+/*
+Group 8 - Assignment 3
+Authors:
+ - Jianxuan Li
+ - Krupa Suhagiya
+*/
+
 // get product from url paramters, return array of products
 function getProducts(){
     const urlParams = new URLSearchParams(window.location.search);
