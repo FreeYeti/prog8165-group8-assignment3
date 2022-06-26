@@ -97,9 +97,9 @@ function submit(event){
     let v4 = validateExpiry(formData.get("expiry"))
     let v5 = validationPassword(formData.get("password"), formData.get("confirmpassword"))
 
-    let error = v1 || v2 || v3 || v4 || v5;
-
-    if (error) return event.preventDefault();
+    // if there is an error, stop here
+    let success = v1 && v2 && v3 && v4 && v5;
+    if (!success) return event.preventDefault();
     
     // convert formdata to a querystring, so we can pass to next page
     const queryString = new URLSearchParams(formData).toString()
