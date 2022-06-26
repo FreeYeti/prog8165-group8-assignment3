@@ -5,7 +5,7 @@ function genItem(name, price){
     document.getElementById("products").innerHTML += dom;
 }
 
-// price calculation
+// show price
 function price(name){
     const prices = {
         "Airpods": 200,
@@ -31,37 +31,39 @@ function displayInfo(name, value){
 // show the subtotal and hst and grade total
 function displayPrice(subtotal){
 
-    const hst = subtotal * 0.13;
-    const total = hst + subtotal;
+    const hst = Math.round(parseFloat(subtotal) * 0.13).toFixed(2); // tax
+    const total = Math.round(parseFloat(hst) + parseFloat(subtotal)).toFixed(2); // grand total
     
     displayInfo("subtotal", `$${subtotal}`);
     displayInfo("hst", `$${hst}`);
     displayInfo("total", `$${total}`);
 }
 
-function getProducts(){
+// call this function on page loaded to load receipt data from URL params
+function initReceipt(){
     const urlParams = new URLSearchParams(window.location.search);
 
     let data = {}
     let subtotal = 0;
 
     urlParams.forEach(function(p,name){
-        data[name] = p.toString();
+        data[name] = p;
 
         // if the param is for products, we append it into the items list
         // if no, display into the payment info
         if (/products\[\d+\]/i.test(name)){
             genItem(p, price(p));
-            subtotal += parseInt(price(p));
+            subtotal += price(p);
         }else{
-            displayInfo(name, p.toString());
+            displayInfo(name, p);
         }
     });
 
+    console.log(data);
 
     displayPrice(subtotal);
 
     return data;
 }
 
-getProducts();
+initReceipt();
